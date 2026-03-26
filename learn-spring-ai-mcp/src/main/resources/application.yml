@@ -1,0 +1,58 @@
+
+server:
+  port: 8073
+  servlet:
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: demo-ai
+  ai:
+    mcp:
+      server:
+        name: mcp-server-stdio-${spring.application.name}
+        version: 1.0.0
+        instructions: "This stdio server provides custom information tools and resources"
+        stdio: false
+        protocol: streamable
+        type: sync
+        capabilities:
+          tool: true
+          resource: true
+          completion: true
+          prompt: true
+        request-timeout: 20s
+        annotation-scanner:
+          enabled: true
+      client:
+        enabled: true
+        name: mcp-client-${spring.application.name}
+        version: 1.0.0
+        request-timeout: 20s
+        type: sync
+        annotation-scanner:
+          enabled: true
+        root-change-notification: true
+        toolcallback:
+          enabled: true
+#        streamable-http:
+#          connections:
+#            demo-ai-server:
+#              url: http://localhost:8073
+#              endpoint: /mcp
+#        sse:
+#          connections:
+#            demo-ai-server:
+#              url: http://localhost:8073
+#              sse-endpoint: /sse
+#        stdio:
+#          connections:
+#            demo-ai-server:
+#              command: cmd.exe
+#              args:
+#                - "/c"
+#                - "C:\\Users\\user\\Desktop\\test\\project\\frame-ai\\frame-ai-mcp\\src\\main\\resources\\mcp.bat"
+#              env:
+#                API_KEY: xxx
+
