@@ -1,4 +1,4 @@
-package com.batchsight.mes.frame.ai.mcp.config;
+package com.batchsight.mes.frame.ai.mcp.server.config;
 
 import org.springframework.context.annotation.Configuration;
 

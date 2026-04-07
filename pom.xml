@@ -20,7 +20,8 @@
     </properties>
 
     <modules>
-        <module>learn-spring-ai-mcp</module>
+        <module>learn-spring-ai-mcp-server</module>
+        <module>learn-spring-ai-mcp-client</module>
     </modules>
 
     <repositories>

@@ -2,7 +2,7 @@
   "mcpServers": {
     "greeting1": {
       "type": "stdio",
-      "command": "C:\\Users\\user\\Desktop\\test\\project\\learn-spring-ai\\learn-spring-ai-mcp\\src\\main\\resources\\mcp.bat",
+      "command": "C:\\Users\\user\\Desktop\\test\\project\\learn-spring-ai\\learn-spring-ai-mcp-server\\src\\main\\resources\\mcp.bat",
       "args": [],
       "env": {
       }

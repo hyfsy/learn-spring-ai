@@ -1,4 +1,4 @@
-package com.batchsight.mes.frame.ai.mcp.config;
+package com.batchsight.mes.frame.ai.mcp.server.config;
 
 import io.modelcontextprotocol.spec.McpSchema;
 import org.springframework.ai.mcp.annotation.*;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 
-@Component
+// @Component
 public class MyTools {
 
     @McpTool(description = "Her Greeting")

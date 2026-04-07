@@ -1,0 +1,28 @@
+
+server:
+  port: 8073
+  servlet:
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: demo-ai-mcp-server
+  ai:
+    mcp:
+      server:
+        name: mcp-server-http-${spring.application.name}
+        version: 1.0.0
+        instructions: "This stdio server provides custom information tools and resources"
+        stdio: false # priority than protocol
+        protocol: streamable
+        type: sync
+        capabilities:
+          tool: true
+          resource: true
+          prompt: true
+          completion: true
+        request-timeout: 20s
+        annotation-scanner:
+          enabled: true
+

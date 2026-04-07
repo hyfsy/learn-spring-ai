@@ -1,4 +1,4 @@
-// package com.batchsight.mes.frame.ai.mcp.config;
+// package com.batchsight.mes.frame.ai.mcp.server.config;
 //
 // import org.springaicommunity.mcp.security.server.apikey.ApiKeyEntity;
 // import org.springaicommunity.mcp.security.server.apikey.ApiKeyEntityRepository;

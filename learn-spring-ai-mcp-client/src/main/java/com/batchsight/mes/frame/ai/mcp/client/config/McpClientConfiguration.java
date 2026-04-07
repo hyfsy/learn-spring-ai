@@ -1,4 +1,4 @@
-package com.batchsight.mes.frame.ai.mcp.config;
+package com.batchsight.mes.frame.ai.mcp.client.config;
 
 import org.springframework.ai.mcp.SyncMcpToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
