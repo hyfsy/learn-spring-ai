@@ -18,9 +18,9 @@ public class GreetingService {
     private static final String CLIENT_NAME = "mcp-client-demo-ai-mcp-client";
 
     @McpElicitation(clients = CLIENT_NAME)
-    public McpSchema.ElicitResult greetingElicitation(McpSchema.ElicitRequest request) {
+    public McpSchema.ElicitResult userInfoElicitation(McpSchema.ElicitRequest request) {
         System.out.println("Receive greeting elicitation request: " + request);
-        User user = new User(18, 1);
+        User user = new User(18, 0);
         return McpSchema.ElicitResult.builder()
                 .message(McpSchema.ElicitResult.Action.ACCEPT)
                 .content(JSON.parseObject(JSON.toJSONString(user)))
@@ -28,7 +28,7 @@ public class GreetingService {
     }
 
     @McpSampling(clients = CLIENT_NAME)
-    public McpSchema.CreateMessageResult greetingSampling(McpSchema.CreateMessageRequest request) {
+    public McpSchema.CreateMessageResult currentStatusSampling(McpSchema.CreateMessageRequest request) {
         System.out.println("Receive greeting sampling request: " + request);
         String message = "hello mcp sampling get data";
         return McpSchema.CreateMessageResult.builder()
@@ -37,12 +37,12 @@ public class GreetingService {
     }
 
     @McpProgress(clients = CLIENT_NAME)
-    public void greetingProgress(McpSchema.ProgressNotification notification) {
+    public void reportProgress(McpSchema.ProgressNotification notification) {
         System.out.printf("Receive greeting progress: %s(%s/%s) --- %s%n", notification.progressToken(), notification.progress(), notification.total(), notification.message());
     }
 
     @McpLogging(clients = CLIENT_NAME)
-    public void greetingLogging(McpSchema.LoggingMessageNotification notification) {
+    public void logLogging(McpSchema.LoggingMessageNotification notification) {
         System.out.printf("Receive greeting log: [%s] %s --- %s%n", notification.level(), notification.logger(), notification.data());
     }
 

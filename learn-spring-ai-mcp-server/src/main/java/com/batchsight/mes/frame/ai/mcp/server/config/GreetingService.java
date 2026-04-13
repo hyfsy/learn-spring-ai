@@ -17,6 +17,7 @@ public class GreetingService {
     public String greeting(@McpToolParam(description = "The greeting source") String sourceName,
                               @McpToolParam(description = "The greeting target") String targetName,
                               McpSyncRequestContext context) {
+        // cc不支持
         context.progress(0);
         System.out.println("Start greeting from " + sourceName + " to " + targetName);
         System.out.println("Client Info:");
@@ -37,6 +38,7 @@ public class GreetingService {
 
         String genderData = null;
         String ageData = null;
+        // cc不支持
         if (context.elicitEnabled()) {
             StructuredElicitResult<User> elicitResult = context.elicit(User.class);
             if (elicitResult.action() == McpSchema.ElicitResult.Action.ACCEPT) {
@@ -60,6 +62,7 @@ public class GreetingService {
         }
         context.progress(60);
         String currentStatus = null;
+        // cc不支持
         if (context.sampleEnabled()) {
             McpSchema.CreateMessageResult sampleResult = context.sample("Target current Status");
             System.out.println("Sample stop reason: " + sampleResult.stopReason());
@@ -78,9 +81,9 @@ public class GreetingService {
         }
         context.progress(99);
         return "hello, "
-                + (ageData == null ? "" : genderData + " ")
-                + (genderData == null ? "" : genderData + " age ")
+                + (ageData == null ? "" : ageData + " age ")
                 + (currentStatus == null ? "" : currentStatus + " ")
+                + (genderData == null ? "" : genderData + " ")
                 + targetName
                 + (home == null ? "" : ", your home is at " + home);
     }
