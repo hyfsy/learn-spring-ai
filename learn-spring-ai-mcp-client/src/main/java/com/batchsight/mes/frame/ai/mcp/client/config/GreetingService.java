@@ -17,6 +17,11 @@ public class GreetingService {
 
     private static final String CLIENT_NAME = "mcp-client-demo-ai-mcp-client";
 
+    public String greeting() {
+        // request server response
+        return "hello";
+    }
+
     @McpElicitation(clients = CLIENT_NAME)
     public McpSchema.ElicitResult userInfoElicitation(McpSchema.ElicitRequest request) {
         System.out.println("Receive greeting elicitation request: " + request);
